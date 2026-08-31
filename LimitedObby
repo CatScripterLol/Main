@@ -1,3 +1,3 @@
 -- This script was made by cat_scripter
-getgenv().SCRIPT_KEY = "a93a47e2-5006-4977-ad7b-80b6f91da5b9"
+getgenv().SCRIPT_KEY = "55ac2a58-7baa-4b6c-b796-0703e7a04946"
 loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/f85cdacfbafaf5dd29bb94eaf736317055fd2c01971f90145644c8a691e6a817/download"))()
