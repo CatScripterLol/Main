@@ -6,5 +6,5 @@
 ╚██████╗██║  ██║   ██║  ████████╗  ███████║╚██████╗██║  ██║██║██║        ██║   ███████╗██║  ██║
  ╚═════╝╚═╝  ╚═╝   ╚═╝  ╚═══════╝  ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚══════╝╚═╝  ╚═╝
 ]]
-getgenv().SCRIPT_KEY = "c832a43a-ff57-4483-a92f-6878a2fa518f"
+getgenv().SCRIPT_KEY = "bef5c7f1-7e4a-4aa8-9129-c8b62527c326"
 loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/f85cdacfbafaf5dd29bb94eaf736317055fd2c01971f90145644c8a691e6a817/download"))()
