@@ -1,8 +1,8 @@
 local dl = "-------------------------------------------"
 print(dl)
-print(" ")
-print("this script was made by cat_scripter")
-print("Youtube youtube.com/@cat_scripter")
-print("Discord https://discord.gg/U4uC6zBTUn")
-print(" ")
+print("|                                         |")
+print("|  this script was made by cat_scripter   |")
+print("|  Youtube youtube.com/@cat_scripter      |")
+print("|  Discord https://discord.gg/U4uC6zBTUn  |")
+print("|                                         |")
 print(dl)
