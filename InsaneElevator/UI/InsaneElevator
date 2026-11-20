@@ -1,0 +1,16 @@
+local ALLOWED_PLACE = 4104106043
+if game.PlaceId ~= ALLOWED_PLACE then
+	warn("[ElevatorHub] unsupported")
+	return
+end
+local url = "https://raw.githubusercontent.com/CatScripterLol/Main/main/InsaneElevator/Functions/InsaneElevator?t=" .. tostring(tick())
+local ok, src = pcall(function() return game:HttpGet(url) end)
+if not ok or type(src) ~= "string" or #src < 1000 then
+	warn("[ElevatorHub] failed to download Functions/InsaneElevator")
+	return
+end
+local LS = loadstring or load
+local fn, err = LS(src)
+if not fn then warn("[ElevatorHub] compile: ", err) return end
+local ran, runErr = pcall(fn)
+if not ran then warn("[ElevatorHub] runtime: ", runErr) end
