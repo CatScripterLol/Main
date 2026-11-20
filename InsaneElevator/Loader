@@ -1,0 +1,47 @@
+local ALLOWED_PLACE = 4104106043
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+if not player then return end
+if game.PlaceId ~= ALLOWED_PLACE then
+	warn("[ElevatorHub] unsupported")
+	return
+end
+
+local BASE = "https://raw.githubusercontent.com/CatScripterLol/Main/main/InsaneElevator/"
+
+local ok, src = pcall(function()
+	return game:HttpGet(BASE .. "Functions/InsaneElevator?t=" .. tostring(tick()) .. "&r=" .. tostring(math.random(1, 999999999)))
+end)
+if not ok or type(src) ~= "string" or src == "" or #src < 1000 then
+	warn("[ElevatorHub] failed to download Functions/InsaneElevator")
+	return
+end
+
+local LS = loadstring or load
+local fn, err = LS(src)
+if not fn then
+	warn("[ElevatorHub] compile: ", err)
+	return
+end
+
+local ran, runErr = pcall(fn)
+if not ran then
+	warn("[ElevatorHub] runtime: ", runErr)
+	return
+end
+
+pcall(function()
+	local Event = game:GetService("ReplicatedStorage"):FindFirstChild("createTextNotification")
+	if not Event then return end
+	local msg = "<font color=\"#ffffff\">Script : </font><font color=\"#ff9e9e\"><b>made by cat_scripter</b></font>\n<font color=\"#ffb347\"><b>don't forget to subscribe</b></font>"
+	if typeof(firesignal) == "function" then
+		firesignal(Event.OnClientEvent, msg, 1)
+	elseif typeof(getconnections) == "function" then
+		for _, c in pairs(getconnections(Event.OnClientEvent)) do
+			pcall(function()
+				if c.Fire then c:Fire(msg, 1)
+				elseif c.Function then c.Function(msg, 1) end
+			end)
+		end
+	end
+end)
